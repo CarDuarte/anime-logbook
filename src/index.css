@@ -1,21 +1,94 @@
 body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: #f5f7fa;
-  color: #222;
+  background: #181b22;
+  color: #f3f4f6;
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
 }
 
 header {
-  background: #1c1e22;
+  background: #181b22;
   color: #fff;
-  padding: 1rem;
+  padding: 1.5rem 2rem 1rem 2rem;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  font-weight: 700;
 }
 
 .container {
-  max-width: 800px;
-  margin: 2rem auto;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(60, 60, 60, 0.1);
-  padding: 2rem;
+  max-width: 1200px;
+  margin: 2.5rem auto;
+  background: #23263a;
+  border-radius: 24px;
+  box-shadow: 0 8px 24px rgba(30, 30, 60, 0.24);
+  padding: 2.5rem 2.5rem 2rem 2.5rem;
+}
+
+.anime-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 2.2rem;
+}
+
+.anime-card {
+  background: #202331;
+  border-radius: 18px;
+  box-shadow: 0 4px 22px rgba(40, 40, 80, 0.15);
+  padding: 0.9rem 0.7rem 1.2rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.18s, transform 0.14s;
+  cursor: pointer;
+  position: relative;
+  min-height: 255px;
+}
+.anime-card:hover {
+  box-shadow: 0 8px 32px rgba(60, 60, 120, 0.28);
+  transform: translateY(-4px) scale(1.035);
+}
+
+.anime-cover {
+  width: 110px;
+  border-radius: 13px;
+  margin-bottom: 0.7rem;
+  background: #181b22;
+  box-shadow: 0 2px 8px rgba(40, 40, 80, 0.16);
+}
+
+.anime-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  text-align: center;
+  color: #fff;
+  max-width: 110px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.anime-meta {
+  font-size: 0.96rem;
+  margin-bottom: 0.3rem;
+  color: #d2d6ed;
+  text-align: center;
+}
+
+.anime-delete {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.7rem;
+  background: none;
+  border: none;
+  font-size: 1.17rem;
+  color: #c55;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.13s;
+}
+.anime-delete:hover {
+  opacity: 1;
+}
+
+h1 {
+  font-size: 22px;
 }
