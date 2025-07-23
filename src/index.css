@@ -1,22 +1,26 @@
 body {
-  background: #181b22;
+  background: #0b2e33;
   color: #f3f4f6;
-  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+}
+
+* {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 
 header {
-  background: #181b22;
-  color: #fff;
-  padding: 1.5rem 2rem 1rem 2rem;
+  background: #4f7c82;
+  color: #ffffff;
+  padding: 1rem;
   font-size: 2rem;
   letter-spacing: 1px;
   font-weight: 700;
+  border-radius: 8px;
 }
 
 .container {
   max-width: 1200px;
   margin: 2.5rem auto;
-  background: #23263a;
+  background: #4f7c82;
   border-radius: 24px;
   box-shadow: 0 8px 24px rgba(30, 30, 60, 0.24);
   padding: 2.5rem 2.5rem 2rem 2.5rem;
@@ -26,6 +30,15 @@ header {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   gap: 2.2rem;
+}
+
+.anime-search-input::placeholder {
+  color: #ffffffff; /* Change to your desired color */
+  opacity: 0.5; /* Optional: ensures full opacity */
+}
+
+.anime-search-input::selection {
+  border: none; /* Change to your desired selection color */
 }
 
 .anime-card {
@@ -90,5 +103,92 @@ header {
 }
 
 h1 {
-  font-size: 22px;
+  font-size: 24px;
+}
+
+.anime-detail-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.anime-detail-cover {
+  width: 250px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px #0004;
+  flex-shrink: 0;
+}
+
+.anime-detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 250px;
+}
+
+.anime-detail-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.1rem;
+}
+
+.anime-detail-label {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.anime-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 0.4rem;
+  margin-bottom: 1.4rem;
+}
+
+.anime-tag-badge {
+  background: #242038;
+  color: #b5aaff;
+  border-radius: 8px;
+  padding: 3px 12px;
+  font-size: 1rem;
+}
+
+.anime-rating-input {
+  width: 60px;
+  font-size: 1.1rem;
+  margin-left: 0.7rem;
+  background-color: #4f7c82;
+  border: none;
+}
+
+/* Hide spinners on Chrome, Safari, Edge, Opera */
+.anime-rating-input::-webkit-inner-spin-button,
+.anime-rating-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Hide spinners on Firefox */
+.anime-rating-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.anime-review-box {
+  width: 95%;
+  min-height: 80px;
+  font-size: 1.08rem;
+  margin-top: 0.3rem;
+  border-radius: 8px;
+  padding: 8px;
+  border: none;
+  resize: none;
+  background: #4f7c82;
+  color: #fafaff;
+}
+
+.anime-review-box::placeholder {
+  color: #ffffff;
+  opacity: 0.6; /* Optional: ensures full opacity */
 }

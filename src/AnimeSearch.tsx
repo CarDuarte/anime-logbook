@@ -9,11 +9,15 @@ type AniListAnime = {
 
 const query = `
   query ($search: String) {
-    Page(perPage: 5) {
+    Page(perPage: 10) {
       media(search: $search, type: ANIME) {
         id
         title { romaji }
         coverImage { large }
+        episodes
+        studios(isMain: true) {
+          nodes { name }
+        }
       }
     }
   }
@@ -42,12 +46,22 @@ export default function AnimeSearch({
     <div>
       <form onSubmit={handleSearch} style={{ marginBottom: "1rem" }}>
         <input
+          className="anime-search-input"
+          style={{
+            background: "inherit",
+            color: "#ffffffff",
+            border: "#b3b7c5 1px solid",
+            borderRadius: 8,
+            padding: "0.7rem 1.1rem",
+            fontSize: 18,
+            width: 260,
+            marginRight: 12,
+            outline: "none",
+          }}
+          placeholder="Search your anime..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search anime..."
-          required
         />
-        <button type="submit">Search</button>
       </form>
       <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
         {results.map((anime) => (
